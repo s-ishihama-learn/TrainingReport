@@ -1,0 +1,48 @@
+#top {
+	margin-top: 10px;
+}
+
+#header	{
+	height: 200px;
+	background-image: url(../img/custmer1.png);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: 20px 10px;
+	text-align: right;
+	border: solid 1px gray;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#header_inner1	{padding: 10px 30px;}
+#header_inner2	{padding: 70px 30px;}
+
+#header h1 {
+	margin: 0;
+	font-size: 2em;
+	font-family: Verdana, Helvetica, sans-serif;
+}
+
+#header p {
+	margin: 0;
+	margin-top: 8px;
+	font-size: 1em;
+}
+
+
+#postinfo {
+	font-size: 0.75em;
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#postinfo span {
+	background-color: #ff8800;
+	color: #ffffff;
+	padding: 4px 9px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}

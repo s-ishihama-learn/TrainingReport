@@ -1,0 +1,194 @@
+body {
+/*	background-color:#E6E6FA; */
+	color: #708090;
+	font-family: Arial, Helvetica, sans-serif, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size: 12px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#wrapper {
+	background: #FFFFFF;
+	border-left: 1px solid #7B68EE;
+	border-right: 1px solid #7B68EE;
+	margin: 0 auto;
+	width: 800px;
+}
+
+#info {
+    background-color: #E9FBFF;
+    border: 1px solid #B7F2FF;
+    margin-bottom: 5px;
+    padding: 5px;
+	font-size: 14px;
+}
+#info_body {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+/* 入力エラーの表示色 */
+.error {
+    background-color:#ffaaaa;
+	text-align: left;
+}
+
+/* FORM内の全体書式 */
+form{
+    background-color:#FFFFFF;
+/*    border:#999999 solid 1px; */
+    padding:10px;
+}
+
+/* デフォルトテーブルの設定 */
+table{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+tr{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+/*    background-color: #F3F3F3; */
+    font-weight: normal;
+}
+td{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* ヘッダーの設定 */
+table.header{
+    background-color:#8496EF;
+    width:100%;
+    height:100px;
+}
+tr.header{
+}
+td.header{
+    background-color:#8496EF;
+    font-size:30pt;
+    font-weight:bold;
+    color:#FFFFFF;
+    text-align:center;
+}
+
+/* メニューの設定 */
+table.menu{
+}
+tr.menu{
+}
+td.menu{
+    background-color:#8497FF;
+    font-size:9pt;
+    text-align:center;
+}
+
+/* 一覧の設定 */
+table.list{
+}
+tr.list{
+}
+th.list{
+    background-color:#4A65A5;
+    color:#FFFFFF;
+    text-align:center;
+}
+td.list{
+    padding: 6px;
+    background-color:#94A6C6;
+    color:#333333;
+    text-align:center;
+}
+
+/* 通常FORMの設定 */
+table.normal{
+    width:100%;
+}
+tr.normal{
+}
+td.normal{
+    padding: 6px;
+    background-color:#999999; /* #4A65A5; */
+    color:#FFFFFF;
+    font-size:11pt;
+    text-align:center;
+}
+
+/* ボタンの設定 */
+table.button{
+    background-color:#DCDCDC;
+}
+tr.button{
+}
+td.button{
+    background-color:#DCDCDC;
+    text-align:left;
+}
+
+/* フッターの設定 */
+table.footer{
+    width:100%;
+    height:20px;
+}
+tr.footer{
+}
+td.footer{
+    background-color:#8496EF;
+    font-size:10pt;
+    color:#FFFFFF;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+
+/* 無設定 */
+table.none{
+}
+tr.none{
+}
+td.none{
+    background-color:#FFFFFF;
+    color:#333333;
+    font-size:10pt;
+    text-align:center;
+}
+
+/* カレンダー月表示の設定 */
+table.month{
+    width:100%;
+}
+tr.month{
+}
+th.month{
+    background-color:#8497FF;
+    font-size:12pt;
+    text-align:center;
+}
+td.month{
+    background-color:#8497FF;
+    font-size:12pt;
+    text-align:center;
+}
+
+/* カレンダー週表示の設定 */
+table.week{
+    width:100%;
+}
+tr.week{
+}
+th.week{
+    background-color:#8497FF;
+    font-size:12pt;
+    text-align:center;
+}
+td.week{
+    background-color:#8497FF;
+    font-size:12pt;
+    text-align:center;
+}

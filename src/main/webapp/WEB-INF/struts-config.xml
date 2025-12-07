@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="LoginForm" type="jp.logware.custmer.form.LoginActionForm" />
+        <form-bean name="MenuForm" type="jp.logware.custmer.form.MenuActionForm" />
+        <form-bean name="ChangePasswdForm" type="jp.logware.custmer.form.ChangePasswdActionForm" />
+        <form-bean name="InfoForm" type="jp.logware.custmer.form.master.InfoEditActionForm" />
+
+        <form-bean name="ScheduleMonthForm" type="jp.logware.custmer.form.schedule.ScheduleMonthActionForm" />
+        <form-bean name="ScheduleWeekForm" type="jp.logware.custmer.form.schedule.ScheduleWeekActionForm" />
+        <form-bean name="ViewUserForm" type="jp.logware.custmer.form.schedule.ViewUserActionForm" />
+        <form-bean name="ViewGroupUserForm" type="jp.logware.custmer.form.schedule.ViewGroupUserActionForm" />
+        <form-bean name="ListScheduleForm" type="jp.logware.custmer.form.schedule.ListScheduleActionForm" />
+        <form-bean name="EditScheduleForm" type="jp.logware.custmer.form.schedule.EditScheduleActionForm" />
+        <form-bean name="ListReportForm" type="jp.logware.custmer.form.report.ListReportActionForm" />
+        <form-bean name="EditReportForm" type="jp.logware.custmer.form.report.EditReportActionForm" />
+        <form-bean name="ListApprovalForm" type="jp.logware.custmer.form.report.ListApprovalActionForm" />
+        <form-bean name="SelectNewForm" type="jp.logware.custmer.form.schedule.SelectNewActionForm" />
+
+        <form-bean name="DeptListForm" type="jp.logware.custmer.form.master.DeptListActionForm" />
+        <form-bean name="DeptEditForm" type="jp.logware.custmer.form.master.DeptEditActionForm" />
+        <form-bean name="UserListForm" type="jp.logware.custmer.form.master.UserListActionForm" />
+        <form-bean name="UserEditForm" type="jp.logware.custmer.form.master.UserEditActionForm" />
+        <form-bean name="UserInitForm" type="jp.logware.custmer.form.master.UserInitActionForm" />
+        <form-bean name="InfoListForm" type="jp.logware.custmer.form.master.InfoListActionForm" />
+        <form-bean name="InfoEditForm" type="jp.logware.custmer.form.master.InfoEditActionForm" />
+         <form-bean name="TypeListForm" type="jp.logware.custmer.form.master.TypeListActionForm" />
+        <form-bean name="TypeEditForm" type="jp.logware.custmer.form.master.TypeEditActionForm" />
+        <form-bean name="HolidayListForm" type="jp.logware.custmer.form.master.HolidayListActionForm" />
+        <form-bean name="HolidayEditForm" type="jp.logware.custmer.form.master.HolidayEditActionForm" />
+
+        <!-- エラー画面 -->
+        <form-bean name="ErrorForm" type="jp.logware.custmer.form.ErrorActionForm" />
+    </form-beans>
+
+    <global-exceptions>
+        <exception type="jp.logware.project.common.AuthException" key="invalid.access" path="/jsp/error.jsp"/>
+        <exception type="java.lang.Exception" key="errors.exception" path="/jsp/error.jsp"/>
+    </global-exceptions>
+
+    <global-forwards />
+
+    <action-mappings>
+        <!-- ログイン -->
+        <action path="/Login"
+            type="jp.logware.custmer.action.LoginAction"
+            name="LoginForm"
+            scope="request"
+            validate="true"
+            input="/jsp/login.jsp" >
+            <forward name="scheduleMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="initUser" path="/jsp/master/userInit.jsp" />
+            <forward name="login" path="/jsp/login.jsp" />
+            <forward name="error" path="/jsp/login.jsp" />
+        </action>
+
+        <!-- ヘッダメニュー -->
+        <action path="/Menu"
+            type="jp.logware.custmer.action.MenuAction"
+            name="MenuForm"
+            scope="request" >
+            <forward name="passwd" path="/jsp/changePasswd.jsp" />
+            <forward name="logout" path="/jsp/login.jsp" />
+            <forward name="error" path="/jsp/error.jsp" />
+        </action>
+
+        <!-- 管理者メニュー -->
+        <action path="/MenuAdmin"
+            type="jp.logware.custmer.action.MenuAdminAction"
+            name="MenuForm"
+            scope="request"
+            validate="true"
+            input="/jsp/navibar/naviAdmin.jsp" >
+            <forward name="viewMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="viewUser" path="/jsp/schedule/viewUser.jsp" />
+            <forward name="viewWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="viewGroup" path="/jsp/schedule/viewGroupUser.jsp" />
+            <forward name="deptList" path="/jsp/master/deptList.jsp" />
+            <forward name="userList" path="/jsp/master/userList.jsp" />
+            <forward name="typeList" path="/jsp/master/typeList.jsp" />
+            <forward name="infoList" path="/jsp/master/infoList.jsp" />
+            <forward name="holidayList" path="/jsp/master/holidayList.jsp" />
+            <forward name="search" path="/jsp/search.jsp" />
+            <forward name="error" path="/jsp/error.jsp" />
+        </action>
+
+        <!-- 承認者メニュー -->
+        <action path="/MenuApproval"
+            type="jp.logware.custmer.action.MenuApprovalAction"
+            name="MenuForm"
+            scope="request"
+            validate="true"
+            input="/jsp/navibar/naviApproval.jsp" >
+            <forward name="viewMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="viewUser" path="/jsp/schedule/viewUser.jsp" />
+            <forward name="viewWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="viewGroup" path="/jsp/schedule/viewGroupUser.jsp" />
+            <forward name="approval" path="/jsp/report/listApproval.jsp" />
+            <forward name="search" path="/jsp/search.jsp" />
+            <forward name="error" path="/jsp/error.jsp" />
+        </action>
+
+        <!-- 一般利用者メニュー -->
+        <action path="/MenuGeneral"
+            type="jp.logware.custmer.action.MenuGeneralAction"
+            name="MenuForm"
+            scope="request"
+            validate="true"
+            input="/jsp/navibar/naviGeneral.jsp" >
+            <forward name="viewMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="viewUser" path="/jsp/schedule/viewUser.jsp" />
+            <forward name="viewWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="viewGroup" path="/jsp/schedule/viewGroupUser.jsp" />
+            <forward name="search" path="/jsp/search.jsp" />
+            <forward name="error" path="/jsp/error.jsp" />
+        </action>
+
+        <!-- お知らせ -->
+        <action path="/InfoAction"
+            type="jp.logware.custmer.action.InfoAction"
+            name="InfoForm"
+            scope="request"
+            validate="false"
+            input="" >
+        </action>
+
+        <!-- パスワード変更 -->
+        <action path="/ChangePasswd"
+            type="jp.logware.custmer.action.ChangePasswdAction"
+            name="ChangePasswdForm"
+            scope="request"
+            validate="true"
+            input="/jsp/changePasswd.jsp" >
+            <forward name="change" path="/index.html" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/changePasswd.jsp" />
+        </action>
+
+        <!-- 月表示 -->
+        <action path="/ScheduleMonth"
+            type="jp.logware.custmer.action.schedule.ScheduleMonthAction"
+            name="ScheduleMonthForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/scheduleMonth.jsp" >
+            <forward name="lastMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="nextMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="new" path="/jsp/schedule/selectNew.jsp" />
+            <forward name="schedule" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="report" path="/jsp/report/listReport.jsp" />
+            <forward name="seq" path="/jsp/report/editReport.jsp" />
+            <forward name="error" path="/jsp/schedule/scheduleMonth.jsp" />
+        </action>
+
+        <!-- 表示利用者変更 -->
+        <action path="/ViewUser"
+            type="jp.logware.custmer.action.schedule.ViewUserAction"
+            name="ViewUserForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/viewUser.jsp" >
+            <forward name="change" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancel" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="error" path="/jsp/schedule/viewUser.jsp" />
+        </action>
+
+        <!-- 週表示 -->
+        <action path="/ScheduleWeek"
+            type="jp.logware.custmer.action.schedule.ScheduleWeekAction"
+            name="ScheduleWeekForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/scheduleWeek.jsp" >
+            <forward name="lastWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="nextWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="new" path="/jsp/schedule/selectNew.jsp" />
+            <forward name="schedule" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="report" path="/jsp/report/listReport.jsp" />
+            <forward name="seq" path="/jsp/report/editReport.jsp" />
+            <forward name="error" path="/jsp/schedule/scheduleWeek.jsp" />
+        </action>
+
+        <!-- 表示グループ設定 -->
+        <action path="/ViewGroupUser"
+            type="jp.logware.custmer.action.schedule.ViewGroupUserAction"
+            name="ViewGroupUserForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/viewGroupUser.jsp" >
+            <forward name="change" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="cancel" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/schedule/viewGroupUser.jsp" />
+        </action>
+
+        <!-- 新規登録選択 -->
+        <action path="/SelectNew"
+            type="jp.logware.custmer.action.schedule.SelectNewAction"
+            name="SelectNewForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/selectNew.jsp" >
+            <forward name="schedule" path="/jsp/schedule/editSchedule.jsp" />
+            <forward name="report" path="/jsp/report/editReport.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/schedule/selectNew.jsp" />
+        </action>
+
+        <!-- スケジュール一覧 -->
+        <action path="/ListSchedule"
+            type="jp.logware.custmer.action.schedule.ListScheduleAction"
+            name="ListScheduleForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/listSchedule.jsp" >
+            <forward name="seq" path="/jsp/schedule/editSchedule.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/schedule/listSchedule.jsp" />
+        </action>
+
+        <!-- スケジュール登録 -->
+        <action path="/EditSchedule"
+            type="jp.logware.custmer.action.schedule.EditScheduleAction"
+            name="EditScheduleForm"
+            scope="request"
+            validate="true"
+            input="/jsp/schedule/editSchedule.jsp" >
+            <forward name="regist" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="edit" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="delete" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="cancel" path="/jsp/schedule/listSchedule.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/schedule/editSchedule.jsp" />
+        </action>
+
+        <!-- 日報一覧 -->
+        <action path="/ListReport"
+            type="jp.logware.custmer.action.report.ListReportAction"
+            name="ListReportForm"
+            scope="request"
+            validate="true"
+            input="/jsp/report/listReport.jsp" >
+            <forward name="seq" path="/jsp/report/editReport.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/report/listReport.jsp" />
+        </action>
+
+        <!-- 日報登録 -->
+        <action path="/EditReport"
+            type="jp.logware.custmer.action.report.EditReportAction"
+            name="EditReportForm"
+            scope="session"
+            validate="true"
+            input="/jsp/report/editReport.jsp" >
+            <forward name="regist" path="/jsp/report/listReport.jsp" />
+            <forward name="edit" path="/jsp/report/listReport.jsp" />
+            <forward name="delete" path="/jsp/report/listReport.jsp" />
+            <forward name="comment" path="/jsp/report/listReport.jsp" />
+            <forward name="release" path="/jsp/report/listReport.jsp" />
+            <forward name="cancel" path="/jsp/report/listReport.jsp" />
+            <forward name="apploval" path="/jsp/report/listApproval.jsp" />
+            <forward name="cancel2" path="/jsp/report/listApproval.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/report/editReport.jsp" />
+        </action>
+
+        <!-- 未承認一覧 -->
+        <action path="/ListApproval"
+            type="jp.logware.custmer.action.report.ListApprovalAction"
+            name="ListApprovalForm"
+            scope="request"
+            validate="true"
+            input="/jsp/report/listApproval.jsp" >
+            <forward name="seq" path="/jsp/report/editReport.jsp" />
+            <forward name="cancelMonth" path="/jsp/schedule/scheduleMonth.jsp" />
+            <forward name="cancelWeek" path="/jsp/schedule/scheduleWeek.jsp" />
+            <forward name="error" path="/jsp/report/listApproval.jsp" />
+        </action>
+
+        <!-- 部署マスタ一覧 -->
+        <action path="/DeptList"
+            type="jp.logware.custmer.action.master.DeptListAction"
+            name="DeptListForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/deptList.jsp" >
+            <forward name="new" path="/jsp/master/deptEdit.jsp" />
+            <forward name="name" path="/jsp/master/deptEdit.jsp" />
+            <forward name="error" path="/jsp/master/deptList.jsp" />
+        </action>
+
+        <!-- 部署マスタ編集 -->
+        <action path="/DeptEdit"
+            type="jp.logware.custmer.action.master.DeptEditAction"
+            name="DeptEditForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/deptEdit.jsp" >
+            <forward name="regist" path="/jsp/master/deptList.jsp" />
+            <forward name="edit" path="/jsp/master/deptList.jsp" />
+            <forward name="delete" path="/jsp/master/deptList.jsp" />
+            <forward name="cancel" path="/jsp/master/deptList.jsp" />
+            <forward name="error" path="/jsp/master/deptEdit.jsp" />
+        </action>
+
+        <!-- 利用者マスタ一覧 -->
+        <action path="/UserList"
+            type="jp.logware.custmer.action.master.UserListAction"
+            name="UserListForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/userList.jsp" >
+           <forward name="new" path="/jsp/master/userEdit.jsp" />
+            <forward name="name" path="/jsp/master/userEdit.jsp" />
+            <forward name="error" path="/jsp/master/userList.jsp" />
+        </action>
+
+        <!-- 利用者マスタ編集 -->
+        <action path="/UserEdit"
+            type="jp.logware.custmer.action.master.UserEditAction"
+            name="UserEditForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/userEdit.jsp" >
+            <forward name="regist" path="/jsp/master/userList.jsp" />
+            <forward name="edit" path="/jsp/master/userList.jsp" />
+            <forward name="delete" path="/jsp/master/userList.jsp" />
+            <forward name="cancel" path="/jsp/master/userList.jsp" />
+            <forward name="error" path="/jsp/master/userEdit.jsp" />
+        </action>
+
+        <!-- 初期管理者登録 -->
+        <action path="/UserInit"
+            type="jp.logware.custmer.action.master.UserInitAction"
+            name="UserInitForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/userInit.jsp" >
+            <forward name="regist" path="/jsp/login.jsp" />
+            <forward name="error" path="/jsp/master/userInit.jsp" />
+        </action>
+
+        <!-- お知らせ一覧 -->
+        <action path="/InfoList"
+            type="jp.logware.custmer.action.master.InfoListAction"
+            name="InfoListForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/infoList.jsp" >
+            <forward name="new" path="/jsp/master/infoEdit.jsp" />
+            <forward name="date" path="/jsp/master/infoEdit.jsp" />
+            <forward name="error" path="/jsp/master/infoList.jsp" />
+        </action>
+
+        <!-- お知らせ編集 -->
+        <action path="/InfoEdit"
+            type="jp.logware.custmer.action.master.InfoEditAction"
+            name="InfoEditForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/infoEdit.jsp" >
+            <forward name="regist" path="/jsp/master/infoList.jsp" />
+            <forward name="edit" path="/jsp/master/infoList.jsp" />
+            <forward name="delete" path="/jsp/master/infoList.jsp" />
+            <forward name="cancel" path="/jsp/master/infoList.jsp" />
+            <forward name="error" path="/jsp/master/infoEdit.jsp" />
+        </action>
+
+        <!-- 種別マスタ一覧 -->
+        <action path="/TypeList"
+            type="jp.logware.custmer.action.master.TypeListAction"
+            name="TypeListForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/typeList.jsp" >
+            <forward name="new" path="/jsp/master/typeEdit.jsp" />
+            <forward name="name" path="/jsp/master/typeEdit.jsp" />
+            <forward name="error" path="/jsp/master/typeList.jsp" />
+        </action>
+
+        <!-- 種別マスタ編集 -->
+        <action path="/TypeEdit"
+            type="jp.logware.custmer.action.master.TypeEditAction"
+            name="TypeEditForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/typeEdit.jsp" >
+            <forward name="regist" path="/jsp/master/typeList.jsp" />
+            <forward name="edit" path="/jsp/master/typeList.jsp" />
+            <forward name="delete" path="/jsp/master/typeList.jsp" />
+            <forward name="cancel" path="/jsp/master/typeList.jsp" />
+            <forward name="error" path="/jsp/master/typeEdit.jsp" />
+        </action>
+
+        <!-- 休日マスタ一覧 -->
+        <action path="/HolidayList"
+            type="jp.logware.custmer.action.master.HolidayListAction"
+            name="HolidayListForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/holidayList.jsp" >
+            <forward name="new" path="/jsp/master/holidayEdit.jsp" />
+            <forward name="date" path="/jsp/master/holidayEdit.jsp" />
+            <forward name="error" path="/jsp/master/holidayList.jsp" />
+        </action>
+
+        <!-- 休日マスタ編集 -->
+        <action path="/HolidayEdit"
+            type="jp.logware.custmer.action.master.HolidayEditAction"
+            name="HolidayEditForm"
+            scope="request"
+            validate="true"
+            input="/jsp/master/holidayEdit.jsp" >
+            <forward name="regist" path="/jsp/master/holidayList.jsp" />
+            <forward name="edit" path="/jsp/master/holidayList.jsp" />
+            <forward name="delete" path="/jsp/master/holidayList.jsp" />
+            <forward name="cancel" path="/jsp/master/holidayList.jsp" />
+            <forward name="error" path="/jsp/master/holidayEdit.jsp" />
+        </action>
+
+        <!-- エラー画面 -->
+        <action path="/Error"
+            type="jp.logware.custmer.action.ErrorAction"
+            name="ErrorForm"
+            scope="request"
+            validate="false"
+            input="/jsp/error.jsp" >
+            <forward name="login" path="/jsp/login.jsp" />
+            <forward name="error" path="/jsp/error.jsp" />
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="application" />
+
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+    </plug-in>
+
+</struts-config>

@@ -1,0 +1,93 @@
+table.month {
+	cellspacing: 1;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.0em;
+
+	border-collapse: separate;
+	border-spacing: 2;
+}
+
+table.day {
+	height: 100px;
+	width: 100%;
+	margin-left: 3px;
+	font-size: 1.0em;
+}
+
+table.month th.sun {
+	width: 12%;
+	text-align: center;
+	background-color: #FF88FF;
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month th.sat {
+	width: 12%;
+	text-align: center;
+	background-color: #8888FF;
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month th.week {
+	width: 12%;
+	text-align: center;
+	background-color: #EEEEEE;
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month th.name {
+	width: 8%;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month td.sun {
+	border: solid 1px gray;
+	background-color: #FFD1F0;
+	border-radius: 3px;
+}
+
+table.month td.sat {
+	border: solid 1px gray;
+	background-color: #C3D9FF;
+	border-radius: 3px;
+}
+
+table.month td.week {
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month td.name {
+	text-align: center;
+	border: solid 1px gray;
+	border-radius: 3px;
+}
+
+table.month td.none {
+	border: solid 1px white;
+}
+
+td.center {
+	text-align: center;
+}
+
+td.left {
+	text-align: left;
+}
+
+td.right {
+	text-align: right;
+	padding: 3px 6px 0px 0px;
+}
+
+td.bold {
+	font-weight: bold;
+}

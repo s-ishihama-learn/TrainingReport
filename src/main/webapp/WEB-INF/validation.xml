@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+
+<form-validation>
+    <formset>
+        <form name="LoginForm" >
+            <field property="userId" depends="required" >
+                <arg0 key="login.userId" />
+            </field>
+            <field property="passwd" depends="required" >
+                <arg0 key="login.passwd" />
+            </field>
+        </form>
+
+        <!-- スケジュール編集 -->
+        <form name="EditScheduleForm" >
+            <field property="viewDate" depends="requiredif,date" >
+                <arg0 key="item.viewDate" />
+                <arg1 key="check.I" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>yyyy-MM-dd</var-value>
+                </var>
+            </field>
+            <field property="startTime" depends="requiredif" >
+                <arg0 key="editSchedule.startTime" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="endTime" depends="requiredif" >
+                <arg0 key="editSchedule.endTime" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="title" depends="requiredif" >
+                <arg0 key="editSchedule.title" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- 日報編集 -->
+        <form name="EditReportForm" >
+            <field property="viewDate" depends="requiredif,date" >
+                <arg0 key="item.viewDate" />
+                <arg1 key="check.I" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>yyyy-MM-dd</var-value>
+                </var>
+            </field>
+            <field property="reportType" depends="requiredif" >
+                <arg0 key="editReport.reportType" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="title" depends="requiredif" >
+                <arg0 key="editReport.title" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="fact" depends="requiredif" >
+                <arg0 key="editReport.fact" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="guess" depends="requiredif" >
+                <arg0 key="editReport.guess" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>                <var>
+                    <var-name>field[3]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[3]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[3]</var-name>
+                    <var-value>comment</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="next" depends="requiredif" >
+                <arg0 key="editReport.next" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="applovalMessage" depends="requiredif" >
+                <arg0 key="editReport.comment.approval" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>apploval</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="commentMessage" depends="requiredif" >
+                <arg0 key="editReport.comment" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>comment</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- パスワード変更 -->
+        <form name="ChangePasswdForm" >
+            <field property="oldPass" depends="requiredif" >
+                <arg0 key="changePasswd.oldPass" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>change</var-value>
+                </var>
+            </field>
+            <field property="newPass" depends="requiredif,minlength,maxlength,mask" >
+                <arg0 key="changePasswd.newPass" />
+                <arg1 key="check.C" />
+                <arg2 key="${var:minlength}" resource="false" />
+                <arg3 key="${var:maxlength}" resource="false" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>change</var-value>
+                </var>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>32</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[\x20-\x7E]*$</var-value>
+                </var>
+            </field>
+            <field property="chkPass" depends="requiredif,minlength,maxlength,mask" >
+                <arg0 key="changePasswd.chkPass" />
+                <arg1 key="check.C" />
+                <arg2 key="${var:minlength}" resource="false" />
+                <arg3 key="${var:maxlength}" resource="false" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>change</var-value>
+                </var>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>32</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[\x20-\x7E]*$</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!--  部署編集 -->
+        <form name="DeptEditForm" >
+            <field property="deptCode" depends="requiredif,mask" >
+                <arg0 key="deptEdit.code" />
+                <arg1 key="check.B" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value></var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>deptName</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[3]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[3]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[3]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9,a-z,A-Z]*$</var-value>
+                </var>
+            </field>
+            <field property="deptName" depends="requiredif" >
+                <arg0 key="deptEdit.name" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value></var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>deptName</var-value>
+                </var>                <var>
+                    <var-name>field[2]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[2]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[2]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[3]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[3]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[3]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- 社員編集 -->
+        <form name="UserEditForm" >
+            <field property="userId" depends="requiredif,mask" >
+                <arg0 key="userEdit.code" />
+                <arg1 key="check.B" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9,a-z,A-Z,-@_]*$</var-value>
+                </var>
+            </field>
+            <field property="deptCode" depends="requiredif" >
+                <arg0 key="deptEdit.code" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="userName" depends="requiredif" >
+                <arg0 key="userEdit.name" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="passwd" depends="requiredif,minlength,maxlength,mask" >
+                <arg0 key="userEdit.passwd" />
+                <arg1 key="check.C" />
+                <arg2 key="${var:minlength}" resource="false" />
+                <arg3 key="${var:maxlength}" resource="false" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>32</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[\x20-\x7E]*$</var-value>
+                </var>
+            </field>
+            <field property="userCom" depends="requiredif" >
+                <arg0 key="userEdit.userCom" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- 初期管理者登録 -->
+        <form name="UserInitForm" >
+            <field property="userId" depends="requiredif,mask" >
+                <arg0 key="userEdit.code" />
+                <arg1 key="check.B" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9,a-z,A-Z,-@_]*$</var-value>
+                </var>
+            </field>
+            <field property="userName" depends="requiredif" >
+                <arg0 key="userEdit.name" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="passwd" depends="requiredif,minlength,maxlength,mask" >
+                <arg0 key="userEdit.passwd" />
+                <arg1 key="check.C" />
+                <arg2 key="${var:minlength}" resource="false" />
+                <arg3 key="${var:maxlength}" resource="false" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>32</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[\x20-\x7E]*$</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- お知らせ編集 -->
+        <form name="InfoEditForm" >
+            <field property="infoDate" depends="requiredif,date" >
+                <arg0 key="infoEdit.date" />
+                <arg1 key="check.I" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>yyyy-MM-dd</var-value>
+                </var>
+            </field>
+            <field property="infoBody" depends="requiredif" >
+                <arg0 key="infoEdit.body" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+            <field property="limiDate" depends="requiredif,date" >
+                <arg0 key="infoEdit.limiDate" />
+                <arg1 key="check.I" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>yyyy-MM-dd</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- 種別編集 -->
+        <form name="TypeEditForm" >
+            <field property="typeCode" depends="requiredif,mask" >
+                <arg0 key="typeEdit.code" />
+                <arg1 key="check.B" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9,a-z,A-Z]*$</var-value>
+                </var>
+            </field>
+            <field property="typeName" depends="requiredif" >
+                <arg0 key="typeEdit.name" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+
+        <!-- 休日編集 -->
+        <form name="HolidayEditForm" >
+            <field property="date" depends="requiredif,date" >
+                <arg0 key="holidayEdit.date" />
+                <arg1 key="check.I" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>yyyy-MM-dd</var-value>
+                </var>
+            </field>
+            <field property="kind" depends="requiredif" >
+                <arg0 key="holidayEdit.kind" />
+                <var>
+                    <var-name>field[0]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[0]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[0]</var-name>
+                    <var-value>regist</var-value>
+                </var>                <var>
+                    <var-name>field[1]</var-name>
+                    <var-value>button</var-value>
+                </var>
+                <var>
+                    <var-name>fieldTest[1]</var-name>
+                    <var-value>EQUAL</var-value>
+                </var>
+                <var>
+                    <var-name>fieldValue[1]</var-name>
+                    <var-value>edit</var-value>
+                </var>
+                <var>
+                    <var-name>fieldJoin</var-name>
+                    <var-value>OR</var-value>
+                </var>
+            </field>
+        </form>
+    </formset>
+</form-validation>
